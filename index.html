@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Syed Fakhar — Portfolio</title>
+  <meta name="description" content="Portfolio of Syed Fakhar (Fakharii) — AI & Automation enthusiast, developer, and student." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; /* deep navy */
+      --card:#0b1230;
+      --muted:#94a3b8;
+      --accent:#7c3aed; /* purple */
+      --glass: rgba(255,255,255,0.04);
+      --radius:16px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color-scheme: dark;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg) 0%, #061023 100%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:24px;
+    }
+
+    .container{max-width:1100px;margin:0 auto}
+
+    header{
+      display:flex;align-items:center;justify-content:space-between;padding:18px 12px;margin-bottom:28px;
+      backdrop-filter: blur(6px);
+    }
+
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{
+      width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#4c1d95);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;color:white;box-shadow:0 6px 18px rgba(12,10,20,0.6)
+    }
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+    nav a:hover{color:var(--accent)}
+
+    .hero{
+      display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin-bottom:28px
+    }
+
+    .card{background:linear-gradient(180deg,var(--card), rgba(6,10,28,0.7));padding:28px;border-radius:var(--radius);box-shadow:0 10px 40px rgba(2,6,23,0.6)}
+
+    .intro h1{font-size:32px;margin:0 0 6px}
+    .intro p.lead{margin:0 0 14px;color:var(--muted)}
+    .cta{display:flex;gap:12px}
+    .btn{padding:10px 14px;border-radius:12px;border:0;font-weight:700;cursor:pointer}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#5b21b6);color:white}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    .profile{display:flex;flex-direction:column;align-items:center;text-align:center}
+    .avatar{width:200px;height:200px;border-radius:20px;background:linear-gradient(135deg,#12223d,#0a1b2a);display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:700;color:#cfe3ff;margin-bottom:12px}
+    .stats{display:flex;gap:12px;margin-top:6px}
+    .stat{background:var(--glass);padding:8px 10px;border-radius:10px;color:var(--muted);font-weight:600}
+
+    section{margin-bottom:22px}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+
+    .projects .project{display:block;padding:16px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);text-decoration:none;color:inherit}
+    .project h3{margin:0 0 8px}
+    .project p{margin:0;color:var(--muted);font-size:14px}
+    .tags{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+    .tag{font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--muted)}
+
+    .skills{display:flex;flex-direction:column;gap:10px}
+    .skill{display:flex;justify-content:space-between;align-items:center}
+    .bar{height:10px;background:rgba(255,255,255,0.04);width:100%;border-radius:999px;overflow:hidden;margin-left:12px}
+    .bar > i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--accent),#4f46e5)}
+
+    form.contact{display:grid;gap:12px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:10px;color:inherit}
+    textarea{min-height:120px;resize:vertical}
+
+    footer{padding:18px 12px;color:var(--muted);text-align:center}
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      nav{display:none}
+    }
+
+    @media (max-width:420px){
+      .logo{width:48px;height:48px;font-size:18px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">FA</div>
+        <div>
+          <div style="font-weight:800">Syed Fakhar</div>
+          <div style="font-size:12px;color:var(--muted);">Automation • AI • Web</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="card intro">
+          <h1>Hi — I'm <span style="color:var(--accent)">Fakharii</span>, a student &amp; automation enthusiast</h1>
+          <p class="lead">I build small tools that save time: web scrapers, automation scripts, and lightweight web apps. Currently learning &amp; teaching myself AI and full-stack web development.</p>
+
+          <div class="cta">
+            <button class="btn btn-primary" onclick="scrollToSection('projects')">See projects</button>
+            <button class="btn btn-ghost" onclick="scrollToSection('contact')">Contact me</button>
+          </div>
+
+          <div style="margin-top:18px;color:var(--muted);font-size:14px">
+            <strong>Open to:</strong> Freelance, Collaboration, Internships
+          </div>
+        </div>
+
+        <aside class="card profile">
+          <div class="avatar">FA</div>
+          <div style="font-weight:700">Syed Fakhar (Fakharii)</div>
+          <div style="color:var(--muted);font-size:14px;margin-bottom:10px">BSAI — Riphah International University</div>
+
+          <div class="stats">
+            <div class="stat">Projects 12</div>
+            <div class="stat">Blog 8</div>
+            <div class="stat">Stars 320</div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="about" class="card">
+        <h2>About</h2>
+        <p style="color:var(--muted)">I'm a student of Artificial Intelligence who loves automating repetitive tasks using Python and small web tools. I enjoy building projects that solve real problems and documenting the process through blog posts and short tutorials.</p>
+        <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap">
+          <div class="tag">Python</div>
+          <div class="tag">Selenium</div>
+          <div class="tag">Flask</div>
+          <div class="tag">HTML &amp; CSS</div>
+          <div class="tag">JavaScript</div>
+          <div class="tag">Automation</div>
+        </div>
+      </section>
+
+      <section id="projects" class="projects">
+        <h2 style="margin-bottom:12px">Projects</h2>
+        <div class="grid">
+          <a class="project card" href="#" onclick="openProject(event, 'project1')">
+            <h3>File Organizer Pro</h3>
+            <p>Automatically sorts files into folders by extension and logs actions. Built with Python.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">Automation</span><span class="tag">CLI</span></div>
+          </a>
+
+          <a class="project card" href="#" onclick="openProject(event, 'project2')">
+            <h3>YouTube Auto Uploader</h3>
+            <p>Small automation script to publish prepared videos and update descriptions. Prototype stage.</p>
+            <div class="tags"><span class="tag">Selenium</span><span class="tag">Automation</span></div>
+          </a>
+
+          <a class="project card" href="#" onclick="openProject(event, 'project3')">
+            <h3>Student Management System</h3>
+            <p>A simple JSON-backed CLI app to manage student records (add, update, delete, persist).</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">JSON</span></div>
+          </a>
+
+          <a class="project card" href="#" onclick="openProject(event, 'project4')">
+            <h3>ScriptifyLife Blog</h3>
+            <p>Guide &amp; content plan for a blog about automation, AI tools, and online earning strategies.</p>
+            <div class="tags"><span class="tag">Content</span><span class="tag">Growth</span></div>
+          </a>
+        </div>
+      </section>
+
+      <section id="skills" class="card">
+        <h2>Skills</h2>
+        <div class="skills">
+          <div class="skill"><div>Python</div><div style="display:flex;align-items:center"><div class="bar" style="width:220px"><i style="width:90%"></i></div><div style="margin-left:8px;color:var(--muted);font-weight:700">90%</div></div></div>
+          <div class="skill"><div>Web (HTML/CSS/JS)</div><div style="display:flex;align-items:center"><div class="bar" style="width:220px"><i style="width:70%"></i></div><div style="margin-left:8px;color:var(--muted);font-weight:700">70%</div></div></div>
+          <div class="skill"><div>Selenium / Automation</div><div style="display:flex;align-items:center"><div class="bar" style="width:220px"><i style="width:82%"></i></div><div style="margin-left:8px;color:var(--muted);font-weight:700">82%</div></div></div>
+          <div class="skill"><div>Data Structures &amp; Algorithms</div><div style="display:flex;align-items:center"><div class="bar" style="width:220px"><i style="width:60%"></i></div><div style="margin-left:8px;color:var(--muted);font-weight:700">60%</div></div></div>
+        </div>
+      </section>
+
+      <section id="contact" class="card">
+        <h2>Contact</h2>
+        <p style="color:var(--muted)">Want to collaborate or hire me for a small automation task? Send a message below or reach me on:</p>
+        <div style="display:flex;gap:12px;margin-bottom:12px;align-items:center">
+          <div class="tag">Email: syedfakhar@example.com</div>
+          <div class="tag">GitHub: @Fakharii</div>
+        </div>
+
+        <form class="contact" onsubmit="handleContact(event)">
+          <input type="text" id="name" placeholder="Your name" required />
+          <input type="email" id="email" placeholder="Your email" required />
+          <textarea id="message" placeholder="Your message" required></textarea>
+          <div style="display:flex;gap:10px">
+            <button type="submit" class="btn btn-primary">Send message</button>
+            <button type="button" class="btn btn-ghost" onclick="clearContact()">Clear</button>
+          </div>
+        </form>
+      </section>
+
+    </main>
+
+    <footer>
+      Built with ❤️ by Syed Fakhar • © <span id="year"></span>
+    </footer>
+  </div>
+
+  <!-- lightweight scripts -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function scrollToSection(id){
+      const el = document.getElementById(id);
+      if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+
+    function openProject(e, id){
+      e.preventDefault();
+      // small quick modal using alert (replace with nicer modal if you like)
+      const titles = {
+        project1: 'File Organizer Pro — details:\n\nA Python CLI that organizes files by extension, ignores hidden/system files, and logs moves (filename, size MB, datetime).',
+        project2: 'YouTube Auto Uploader — details:\n\nPrototype using Selenium to automate upload + description updates.',
+        project3: 'Student Management System — details:\n\nJSON-backed CLI: add, update, delete, persist students. Includes search and report features.',
+        project4: 'ScriptifyLife Blog — details:\n\nContent plan + growth roadmap for automation & AI tutorials.'
+      };
+      alert(titles[id] || 'Project details coming soon');
+    }
+
+    function handleContact(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name||!email||!message){alert('Please fill all fields.');return}
+
+      // For demo: open mailto (production should use backend endpoint)
+      const subject = encodeURIComponent('Portfolio contact from ' + name);
+      const body = encodeURIComponent(message + '\n\n' + 'Reply to: ' + email);
+      window.location.href = `mailto:syedfakhar@example.com?subject=${subject}&body=${body}`;
+    }
+
+    function clearContact(){
+      document.getElementById('name').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('message').value = '';
+    }
+  </script>
+</body>
+</html>
